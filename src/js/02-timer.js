@@ -28,11 +28,6 @@ const options = {
 
 flatpickr(dateTimeSelector, options);
 
-function onBtnClick() {
-    intervalId = setInterval(startTimer);
-    startBtn.disabled = true;
-    dateTimeSelector.disabled = true;
-  }
 
 function startTimer() {
     startBtn.setAttribute("disabled", "disabled");
@@ -45,6 +40,12 @@ function startTimer() {
     dataHours.textContent = addLeadingZero(hours);
     dataMinutes.textContent = addLeadingZero(minutes);
     dataSeconds.textContent = addLeadingZero(seconds);
+}
+
+function onBtnClick() {
+    intervalId = setInterval(startTimer);
+    startBtn.disabled = true;
+    dateTimeSelector.disabled = true;
 }
 
 startBtn.addEventListener("click", onBtnClick);
