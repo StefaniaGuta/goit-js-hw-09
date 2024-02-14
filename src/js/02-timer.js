@@ -39,10 +39,9 @@ function startTimer() {
     dataMinutes.textContent = addLeadingZero(minutes);
     dataSeconds.textContent = addLeadingZero(seconds);
 }
-let intervalId;
 
 function onBtnClick() {
-    intervalId = setInterval(startTimer);
+    timerlId = setInterval(startTimer);
     startBtn.disabled = true;
     dateTimeSelector.disabled = true;
 }
