@@ -32,7 +32,6 @@ function onBtnClick() {
     intervalId = setInterval(startTimer);
     startBtn.disabled = true;
     dateTimeSelector.disabled = true;
-    console.log(intervalId);
   }
 
 function startTimer() {
