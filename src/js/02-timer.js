@@ -28,9 +28,7 @@ const options = {
 
 flatpickr(dateTimeSelector, options);
 
-
 function startTimer() {
-    startBtn.setAttribute("disabled", "disabled");
     const selDate = new Date(dateTimeSelector.value).getTime();
     const currentDate = new Date().getTime();
     const deltaTime = selDate - currentDate;
@@ -41,6 +39,7 @@ function startTimer() {
     dataMinutes.textContent = addLeadingZero(minutes);
     dataSeconds.textContent = addLeadingZero(seconds);
 }
+let intervalId;
 
 function onBtnClick() {
     intervalId = setInterval(startTimer);
