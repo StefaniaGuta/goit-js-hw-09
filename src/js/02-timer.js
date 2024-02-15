@@ -10,6 +10,8 @@ const dataMinutes = document.querySelector("[data-minutes]");
 const dataSeconds = document.querySelector("[data-seconds]");
 
 startBtn.disabled = true;
+let intervalId = null;
+
 
 const options = {
     enableTime: true,
@@ -40,13 +42,11 @@ function startTimer() {
     dataSeconds.textContent = addLeadingZero(seconds);
 }
 
-function onBtnClick() {
-    timerlId = setInterval(startTimer);
+startBtn.addEventListener("click", e => {
+    intervalId = setInterval(startTimer, 1000);
     startBtn.disabled = true;
     dateTimeSelector.disabled = true;
-}
-
-startBtn.addEventListener("click", onBtnClick);
+});
 
 function addLeadingZero(value) {
     return String(value).padStart(2, '0');
